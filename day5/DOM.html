@@ -1,0 +1,23 @@
+<html>
+<body>
+<h2>javascriptHTML DOM</h2>
+<p>Finding HTML Elements Using<b>document.forms</b></p>
+<form id="frm1"action="">
+FirstName:<input type="txt"name="fname"value="ravi"><br>
+LastName:<input type="txt"name="fname"value="kumar"><br>
+<br>
+<input type="submit"value="submit">
+</form>
+<p>these are the values of each element:</p>
+<p id="demo"></p>
+<script>
+const x=document.forms["frm1"];
+let text="";
+for(let i=0;i<x.length;i++){
+text +=x.elements[i].value+"<br>";
+}
+document.getElementById("demo").innerHTML=text;
+</script>
+</body>
+
+</html>
