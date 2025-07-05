@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+         body {
+      font-family: Arial;
+      margin: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    </style>
+
+</head>
+<body>
+    <h2>Faculty Information Form</h2>
+  <form id="userForm" onsubmit="showData(event)">
+    <label>
+       Faculty Name:
+       <br>
+      <input type="text" id="name" required>
+    </label>
+    <label>
+      Training Attended:
+      <br>
+      <select id="Training Attended" required>
+        <option value="">--Select Training--</option>
+        <option value="python">python</option>
+        <option value="Java Script">Java Script</option>
+        <option value="CSS">CSS</option>
+        <option value="D Jango">D Jango</option>
+      </select>
+    </label>
+    <label>
+      Overall Rating:
+      <br>
+      <input type="radio" name="Rating" value="Exellent" required> Exellent
+      <input type="radio" name="Rating" value="Good" required> Good<br>
+      <input type="radio" name="Rating" value="Average"> Average
+      <input type="radio" name="Rating" value="poor"> poor
+    </label>
+    <label>
+      Topics Covered:
+      <br>
+      <input type="checkbox" name="Topics" value="Content Quality"> Content Quality<br>
+      <input type="checkbox" name="Topics" value="Delivery"> Delivery<br>
+      <input type="checkbox" name="Topics" value="Interaction"> Interaction<br>
+      <input type="checkbox" name="Topics" value="Relavence"> Relavence
+    </label>
+    <label>
+        Suggestions/Comments:
+        <br>
+        <textarea rows="5" cols="20" name="Suggestions">
+            Write your feedback here...
+            </textarea>
+    </label>
+<div>
+        <button onclick="submit">
+            submit feedback
+        </button>
+</div>
+
+</body>
+</html>
