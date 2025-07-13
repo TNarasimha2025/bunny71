@@ -1,0 +1,11 @@
+<h2>Your Cart</h2>
+{% for product in products %}
+    <div>
+        <h3>{{ product.name }}</h3>
+        <p>Rs{{ product.price }}</p>
+    </div>
+{% endfor %}
+<br>
+<a href="/">Continue Shopping</a>
+<br>
+<a href="{% url 'place_order' %}">Place Order</a>
