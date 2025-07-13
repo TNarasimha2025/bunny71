@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canteen List</title>
+    <style>
+        img { max-width: 150px; }
+         img { max-height: 150px; }
+        .Canteen { border: 1px solid #ccc; padding: 10px; margin: 10px; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>lists</h1>
+    {% for Canteen in lists %}
+        <div class="Canteen">
+            {% if Canteen.image %}
+                <img src="{{ Canteen.image.url }}" alt="{{ Canteen.name }}">
+            {% endif %}
+            <h2><a href="{% url 'Canteen_detail' Canteen.pk %}">{{Canteen.name }}</a></h2>
+            <p>${{ Canteen.price }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
