@@ -3,7 +3,8 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 urlpatterns = [
-    path('', views.product_list, name='product_list'),
+    path('',views.home, name='home'),
+    path('product_list', views.product_list, name='product_list'),
     path('product/<int:pk>/', views.product_detail, name='product_detail'),
      path('signup/', views.signup, name='signup'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),

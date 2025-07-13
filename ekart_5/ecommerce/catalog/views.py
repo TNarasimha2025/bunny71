@@ -5,6 +5,11 @@ from django.shortcuts import redirect
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from .models import Order
+from django.shortcuts import render
+
+def home(request):
+    return render(request,'home.html')
+
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

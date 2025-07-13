@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>E commerce Application</title>
     <style>
-        body { font-family: Arial, sans-serif; }
+        body { font-family: Arial, sans-serif; background-color:rgba(134, 218, 32, 0.282);}
         .navbar {
             background-color: #333;
             overflow: hidden;
@@ -38,19 +39,39 @@
             display: flex;
             flex-wrap: wrap;
         }
+        .search{
+            display: flex;
+            flex-direction: row;
+            float:right;
+        }
     </style>
 </head>
 <body>
+      <div></div>
+
     <div class="navbar">
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'login' %}">Canteen</a>
+    <a href="{% url 'product_list' %}">Home</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'view_cart' %}">View_cart</a>
     
-    <a href="{% url 'view_cart' %}">Bakery</a>
+<div class="search">
+     <form method="get">
+    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+</form>
+</div>
+
 </div>
 
 
     <div class="content">
         {% block content %}{% endblock %}
     </div>
+    <footer class="foot" >
+        <pre>T.Narasimha
+              tnarasimha591@gmail.com
+        </pre>
+
+    </footer>
 </body>
 </html>

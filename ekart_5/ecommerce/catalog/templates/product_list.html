@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,12 +11,8 @@
     </style>
 </head>
 <body>
-    <form method="get">
-    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
-    <button type="submit">Search</button>
-</form>
-<a href="{% url 'login'%}">Login</a>
-    <a href="{% url 'view_cart'%}">view_cart</a>
+   
+
     <h1>Products</h1>
 
 <h3>Filter by Category:</h3>
@@ -39,4 +37,6 @@
 
 {% endfor %}
 
-
+</body>
+</html>
+{% endblock %}
