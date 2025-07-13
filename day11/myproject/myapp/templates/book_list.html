@@ -3,9 +3,27 @@
 {% block title %}Book List{% endblock %}
 {%  block content  %}
     <h1>Book List</h1>
-    <ul>
-        {% for book in books %}
-  <li>{{ book.title }} - {{ book.author }} - {{ book.publication_date }}</li>
+<tr>
+<th>BookName</th>
+<th>AutherName</th>
+<th>Date</th>
+<th>Actions</th>
+</tr>
+
+
+ {% for book in books %}
+  <tr>
+
+<td>{{ book.title }}  </td>
+<td>{{ book.author }} </td>
+<td>{{ book.publication_date }}</td> 
+<td>
+<a href="{% url 'Book_update' Book.id %}">Edit</a>
+<a href="{% url 'Book_delete' Book.id %}">Delete</a>
+</td>
+</tr>
+{% empty%}
+<tr><td>no Bookdata</td></tr>
         {% endfor %}
-    </ul>
+    <tr>
  {% endblock %}
